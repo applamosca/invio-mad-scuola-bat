@@ -168,9 +168,9 @@ def seleziona_template(email: str) -> tuple[str, str]:
 
 
 def allega_file(msg: MIMEMultipart) -> int:
-    """Allega tutti i 16 file professionali al messaggio. Restituisce il conteggio."""
+    """Allega tutti i file professionali al messaggio. Restituisce il conteggio."""
     allegati_ok = 0
-    for nome_file in LISTA_ALLEGATI:
+    for nome_file in FILES_ALLEGATI:
         percorso_file = CARTELLA_ALLEGATI / nome_file
         if not percorso_file.exists():
             logger.warning("  Allegato non trovato: %s (saltato)", nome_file)
@@ -203,7 +203,7 @@ def costruisci_email(destinatario: str) -> MIMEMultipart:
     msg.attach(MIMEText(testo, "plain", "utf-8"))
 
     num_allegati = allega_file(msg)
-    logger.info("  Allegati inclusi: %d/%d", num_allegati, len(LISTA_ALLEGATI))
+    logger.info("  Allegati inclusi: %d/%d", num_allegati, len(FILES_ALLEGATI))
 
     return msg
 
@@ -228,10 +228,10 @@ def main():
     scuole = carica_lista_scuole()
 
     # Verifica allegati disponibili
-    allegati_presenti = [f for f in LISTA_ALLEGATI if (CARTELLA_ALLEGATI / f).exists()]
-    allegati_mancanti = [f for f in LISTA_ALLEGATI if not (CARTELLA_ALLEGATI / f).exists()]
+    allegati_presenti = [f for f in FILES_ALLEGATI if (CARTELLA_ALLEGATI / f).exists()]
+    allegati_mancanti = [f for f in FILES_ALLEGATI if not (CARTELLA_ALLEGATI / f).exists()]
 
-    logger.info("Allegati trovati: %d/%d", len(allegati_presenti), len(LISTA_ALLEGATI))
+    logger.info("Allegati trovati: %d/%d", len(allegati_presenti), len(FILES_ALLEGATI))
     if allegati_mancanti:
         logger.warning("Allegati mancanti: %s", ", ".join(allegati_mancanti))
 
