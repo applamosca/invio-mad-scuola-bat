@@ -73,9 +73,9 @@ FILES_ALLEGATI = [
     "ICDL_Essentials.pdf",
     "ICDL_Security.pdf",
     "ICDL_Standard.pdf",
-    "microsoft.PDF",          
+    "Microsoft.pdf",          
     "OSINT_Analysis.pdf",
-    "vmware.pdf",
+    "VMware.pdf",
     "Autocertificazione_Laurea_Antonio_Danzi.pdf"  # <--- AGGIUNTO QUI
 ]
 
