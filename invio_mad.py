@@ -59,8 +59,8 @@ DELAY_SECONDI = 120
 # ──────────────────────────────────────────────
 CARTELLA_ALLEGATI = Path(__file__).parent / "allegati"
 
-LISTA_ALLEGATI = [
-    "Curriculum_Vitae_Danzi.pdf",
+FILES_ALLEGATI = [
+    "Curriculum_Vitae_Danzi.pdf", 
     "Attestato_Diploma.jpg",
     "Cisco_CCNA.pdf",
     "Cisco_Wireless.pdf",
@@ -73,9 +73,10 @@ LISTA_ALLEGATI = [
     "ICDL_Essentials.pdf",
     "ICDL_Security.pdf",
     "ICDL_Standard.pdf",
-    "microsoft.PDF",
+    "microsoft.PDF",          
     "OSINT_Analysis.pdf",
     "vmware.pdf",
+    "Autocertificazione_Laurea_Antonio_Danzi.pdf"  # <--- AGGIUNTO QUI
 ]
 
 # ──────────────────────────────────────────────
